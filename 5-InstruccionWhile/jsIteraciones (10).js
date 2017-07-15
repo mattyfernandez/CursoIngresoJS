@@ -3,7 +3,7 @@ function Mostrar()
 
 	var positivos=0;
 	var contpos=0;
-	var negativos=1;
+	var negativos=0;
 	var contneg=0;
 	var ceros=0;
 	var pares=0;
@@ -29,6 +29,7 @@ function Mostrar()
 		{
 			negativos += numero;
 			contneg ++;
+
 
   			if (numero % 2 == 0)
 			  {
@@ -59,7 +60,24 @@ function Mostrar()
 	
 	promediopositivos = positivos/contpos;
 	promedionegativos = negativos/contneg;
+
+	if (isNaN(promediopositivos))
+		{
+			promediopositivos = 0;
+		}
+	if(isNaN (promedionegativos))
+		{
+			promedionegativos = 0
+		}
+		
 	diferencia = contpos - contneg;
+
+	if(diferencia < 0)
+		{
+			diferencia * -1;
+		}
+	
+
 
 	document.write('1) La suma de todos los positivos es = ' + positivos + '<br>');
 	document.write('2) La cantidad de números positivos es = ' + contpos + '<br>');
@@ -69,7 +87,7 @@ function Mostrar()
 	document.write('6) La cantidad de nùmeros pares es = ' + pares + '<br>');
 	document.write('7) El promedio de los números positivos es = ' + promediopositivos + '<br>');
 	document.write('8) El promedio de los números negativos es = ' + promedionegativos + '<br>');
-	document.write('9) La diferencia entre la cantidad de números positivos y negativos es de = ' + diferencia + '<br>');
+	document.write('9) La diferencia entre la cantidad de números positivos y negativos es de = ' + diferencia);
 
 	
 
